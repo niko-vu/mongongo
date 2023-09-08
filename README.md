@@ -10,11 +10,11 @@ I'm still struggling with this project!! But really fighting with MongoDB/mongoo
 
 The deployed application should look something like this:
 
-![Screenshot of the application.](https://github.com/niko-vu/logo-skimping/blob/main/assets/screenrecordingGIF.gif?raw=true)
+![Screenshot of the application.](/mongongo.gif)
 
 ## Credits
 
-* ...
+* Referenced these two StackOverflow posts [1](https://stackoverflow.com/questions/34173648/mongoerror-invalid-operation-no-operations-in-bulk), [2](https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array) for my schema formatting and utils.
 
 ## License
 
