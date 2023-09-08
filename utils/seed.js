@@ -1,7 +1,10 @@
+// BACKUP SEED......
+
 const connection = require('../config/connection');
 const { Thought, Reaction, User } = require('../models');
 const {
   getRandomUser,
+  getRandomEmail,
   getRandomReactions,
   getRandomThought,
   genRandomIndex,
@@ -50,10 +53,14 @@ connection.once('open', async () => {
   // ------
   for (let i = 0; i < 20; i++) {
     const username = getRandomUser();
+    const thoughts = getRandomThought();
+    const email = getRandomEmail();
 
     users.push({
       username,
-      age: Math.floor(Math.random() * (99 - 18 + 1) + 18),
+      email,
+      thoughts,
+    //   age: Math.floor(Math.random() * (99 - 18 + 1) + 18),
     });
   }
 
@@ -62,7 +69,7 @@ connection.once('open', async () => {
   // logged table for reactions and thoughts
   console.table(reactions);
   console.table(thoughts);
-  console.log(users);
+  console.table(users);
   console.timeEnd('seeding complete 🌱');
   process.exit(0);
 });
