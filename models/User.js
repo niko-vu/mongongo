@@ -3,21 +3,22 @@ const { Schema, model } = require('mongoose');
 const userSchema = new Schema(
   {
     username: {
-        type: String,
-        unique: true,
-        required: true,
-        trim: true,
+      type: String,
+      unique: true,
+      required: true,
+      trim: true,
     },
     email: {
-        type: String,
-        required: true,
-        unique: true,
-        match: true,
+      type: String,
+      required: true,
+      unique: true,
+      match: true
+    },
     thoughts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Thought',
-        }
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Thought',
+      },
     ],
     friends: [
       {
@@ -26,12 +27,13 @@ const userSchema = new Schema(
       },
     ],
   },
+  {
     toJSON: {
       virtuals: true,
     },
     id: false,
   }
-);
+)
 
 userSchema
   .virtual('friendCount')
